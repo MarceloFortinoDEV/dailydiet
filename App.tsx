@@ -1,13 +1,14 @@
-import { ScreenContent } from 'components/ScreenContent';
-import { StatusBar } from 'expo-status-bar';
-
+import { NavigationContainer } from '@react-navigation/native';
 import './global.css';
+import { AppRoutes } from '~/routes/app.routes';
+
+import { pt, registerTranslation } from 'react-native-paper-dates'
+registerTranslation('pt', pt)
 
 export default function App() {
   return (
-    <>
-      <ScreenContent title="Home" path="App.tsx" />
-      <StatusBar style="auto" />
-    </>
+    <NavigationContainer>
+        <AppRoutes />
+    </NavigationContainer>
   );
 }
